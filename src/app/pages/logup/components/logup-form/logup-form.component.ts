@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-logup-form',
   templateUrl: './logup-form.component.html',
-  styleUrls: ['./logup-form.component.scss']
+  styleUrls: ['../../../form.component.scss']
 })
 export class LogupFormComponent {
 
