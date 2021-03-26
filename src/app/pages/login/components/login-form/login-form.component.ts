@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
+  showpwd = false;
+
   constructor() { }
 
   ngOnInit(): void {

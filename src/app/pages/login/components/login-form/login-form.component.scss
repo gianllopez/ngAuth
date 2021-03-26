@@ -1,0 +1,33 @@
+:host {
+  display: grid;
+  .form-header {
+    text-align: center;
+    color: white;
+    h4 { margin: 0 }
+  }
+  .form-control {
+    margin-bottom: 10px;
+  }
+  .password-input {
+    position: relative;
+    i {
+      position: absolute;
+      top: 0; right: 0;
+      padding: 11px;
+    }
+  }
+  button {
+    background-color: #1478c7;
+    height: 45px;
+    margin-top: 5px;
+  }
+  a {
+    text-align: center;
+    color: white;
+    margin: 7px 0;
+    cursor: pointer;
+    &:hover {
+      color: #9caab0;
+    }
+  }
+}
