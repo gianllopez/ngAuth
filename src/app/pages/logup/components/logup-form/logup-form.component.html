@@ -1,1 +1,15 @@
-<p>logup-form works!</p>
+<form class="logup-form">
+  <div class="form-header">
+    <h4>Logup</h4>
+    <p>Complete your logup with the form</p>
+  </div>
+  <input type="text" class="form-control" placeholder="Username">
+  <input type="text" class="form-control" placeholder="Name">
+  <input type="email" class="form-control" placeholder="Email">
+  <div class="password-input">
+    <input [type]="showpwd ? 'text' : 'password'" class="form-control" placeholder="Password">
+    <i class="fas fa-eye" *ngIf="!showpwd" (click)="showpwd = true"></i>
+    <i class="fas fa-eye-slash" *ngIf="showpwd" (click)="showpwd = false"></i>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>

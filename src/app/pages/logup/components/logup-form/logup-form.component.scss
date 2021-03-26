@@ -1,0 +1,31 @@
+.logup-form {
+  display: grid;
+  width: 85vw;
+  max-width: 450px;
+  background: rgb(255 255 255 / 8%);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 10px;
+  padding: 15% 10%;
+  .form-header {
+    text-align: center;
+    color: white;
+    h4 { margin: 0 }
+  }
+  .form-control {
+    margin-bottom: 10px;
+  }
+  .password-input {
+    position: relative;
+    i {
+      position: absolute;
+      top: 0; right: 0;
+      padding: 11px;
+    }
+  }
+  button {
+    background-color: #1478c7;
+    border: none;
+    height: 40px;
+    margin-top: 5px;
+  }
+}

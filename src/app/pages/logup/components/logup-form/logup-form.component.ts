@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-logup-form',
   templateUrl: './logup-form.component.html',
   styleUrls: ['./logup-form.component.scss']
 })
-export class LogupFormComponent implements OnInit {
+export class LogupFormComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  showpwd = false;
 
 }
