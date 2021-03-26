@@ -1,11 +1,5 @@
-.logup-form {
+:host {
   display: grid;
-  width: 85vw;
-  max-width: 450px;
-  background: rgb(255 255 255 / 8%);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  border-radius: 10px;
-  padding: 15% 10%;
   .form-header {
     text-align: center;
     color: white;
@@ -24,8 +18,16 @@
   }
   button {
     background-color: #1478c7;
-    border: none;
-    height: 40px;
+    height: 45px;
     margin-top: 5px;
+  }
+  a {
+    text-align: center;
+    color: white;
+    margin: 7px 0;
+    cursor: pointer;
+    &:hover {
+      color: #9caab0;
+    }
   }
 }
