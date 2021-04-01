@@ -7,11 +7,13 @@ const routes: Routes = [
     children: [
       {
         path: 'logup',
-        loadChildren: () => import('./pages/logup/logup.module').then(m => m.LogupModule)
+        loadChildren: () => import('./pages/logup/logup.module').then(m => m.LogupModule),
+        data: { animationType: 'logupAnimation' }
       },
       {
         path: 'login',
-        loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
+        loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
+        data: { animationType: 'loginAnimation' }
       }
     ]
   }

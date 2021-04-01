@@ -1,17 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['../../../form.component.scss']
-})
-export class LoginFormComponent implements OnInit {
-
+  styleUrls: ['../../../form.component.scss']})
+export class LoginFormComponent {
   showpwd = false;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+};
