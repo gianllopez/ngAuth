@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-logup-form',
-  templateUrl: './logup-form.component.html',
-  styleUrls: ['../../../form.component.scss']})
+  templateUrl: './logup-form.component.html'})
 export class LogupFormComponent {
   showpwd = false;
 };
