@@ -13,9 +13,4 @@ export class AppComponent {
     return outlet.activatedRouteData.animationType;
   };
 
-  getCurrentState(e: any) {
-    let { fromState, toState } = e;
-    console.log(fromState, toState);
-  };
-
 };
