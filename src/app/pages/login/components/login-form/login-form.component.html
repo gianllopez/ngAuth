@@ -1,14 +1,16 @@
-<div class="form-header">
-  <h4>Login</h4>
-  <p>Fill the form with your credentials</p>
-</div>
-<input type="text" class="form-control" placeholder="Username">
-<div class="password-input">
-  <input [type]="showpwd ? 'text' : 'password'" class="form-control" placeholder="Password">
-  <i class="fas fa-eye" *ngIf="!showpwd" (click)="showpwd = true"></i>
-  <i class="fas fa-eye-slash" *ngIf="showpwd" (click)="showpwd = false"></i>
-</div>
-<button class="btn btn-primary">Submit</button>
-<a routerLink="/logup">
-  Not registered yet?
-</a>
+<form class="form login-form">
+  <div class="form-header">
+    <h4>Login</h4>
+    <p>Fill the form with your credentials</p>
+  </div>
+  <input type="text" class="form-control" placeholder="Username">
+  <div class="password-input">
+    <input [type]="showpwd ? 'text' : 'password'" class="form-control" placeholder="Password">
+    <i class="fas fa-eye" *ngIf="!showpwd" (click)="showpwd = true"></i>
+    <i class="fas fa-eye-slash" *ngIf="showpwd" (click)="showpwd = false"></i>
+  </div>
+  <button class="btn btn-primary">Continue</button>
+  <a routerLink="/logup">
+    Not registered yet?
+  </a>
+</form>

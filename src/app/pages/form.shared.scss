@@ -1,0 +1,31 @@
+.form {
+  width: 95vw;
+  max-width: 450px;
+  padding: 10%;
+  display: grid;
+  .form-header {
+    color: white;
+    text-align: center;
+    h4 {
+      margin-bottom: 0;
+      line-height: .75;
+    }
+  }
+  .form-control {
+    margin-bottom: 7px;
+  }
+  .password-input {
+    position: relative;
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 11px;
+    }
+  }
+  a {
+    text-align: center;
+    color: #ccc;
+    margin-top: 10px;
+  }
+}

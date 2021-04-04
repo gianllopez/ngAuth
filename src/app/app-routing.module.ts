@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path: 'logup',
     loadChildren: () => import('./pages/logup/logup.module').then(m => m.LogupModule),
-    data: { animationType: 'logupAnimation' }
+    data: { animationType: 'logupForm' }
   },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
-    data: { animationType: 'loginAnimation' }
+    data: { animationType: 'loginForm' }
   },
   { path: '', redirectTo: 'logup', pathMatch: 'full' }
 ];
