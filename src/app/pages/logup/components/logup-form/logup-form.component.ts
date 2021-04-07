@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['../../../form.shared.scss']})
 
 export class LogupFormComponent {
-  
+
   showpwd = false;
 
   logupForm!: FormGroup;
@@ -16,8 +16,8 @@ export class LogupFormComponent {
     this.buildForm();
   };
 
-  buildForm() {
-    let { required, minLength, maxLength, email } = Validators;
+  buildForm(): void {
+    const { required, minLength, maxLength, email } = Validators;
     this.logupForm = this.formBuilder.group({
       name: ['', [required, minLength(10), maxLength(30)]],
       username: ['', [required, minLength(8), maxLength(12)]],

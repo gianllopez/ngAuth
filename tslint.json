@@ -143,6 +143,7 @@
       "element",
       "app",
       "kebab-case"
-    ]
+    ],
+    "one-variable-per-declaration": false
   }
 }
