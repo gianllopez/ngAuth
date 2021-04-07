@@ -26,5 +26,9 @@ export class LogupFormComponent {
     });
   };
 
+  wrongFilled(field: string): any {
+    const fieldCtrl = this.logupForm.get(field)
+    return fieldCtrl?.dirty && fieldCtrl?.errors;
+  };
 
 };

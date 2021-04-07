@@ -1,0 +1,11 @@
+<div class="form-group">
+  <app-errors-displayer
+    *ngIf="fieldErrors"
+    [validationErrors]="fieldErrors"></app-errors-displayer>
+  <input
+    [type]="type"
+    class="form-control"
+    [placeholder]="placeholder"
+    [formControlName]="controlName"
+  />
+</div>

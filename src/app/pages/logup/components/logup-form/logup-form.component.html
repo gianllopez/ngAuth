@@ -3,30 +3,38 @@
     <h4>Logup</h4>
     <p>Complete to create your user</p>
   </div>
-  <div class="form-group">
+  <app-form-input
+    [fieldErrors]="wrongFilled('name')"
+    type="text"
+    placeholder="Name"
+    controlName="name"></app-form-input>
+  <!-- <div class="form-group">
     <app-errors-displayer
-      *ngIf="logupForm.get('name')?.dirty && logupForm.get('name')?.errors as errors"
+      *ngIf="getField('username')?.dirty && getField('username')?.errors as errors"
       [validationErrors]="errors"></app-errors-displayer>
     <input
       type="text"
       class="form-control"
-      placeholder="Name"
-      formControlName="name"
+      placeholder="Username"
+      formControlName="username"
     />
   </div>
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Username"
-    formControlName="username"
-  />
-  <input
-    type="email"
-    class="form-control"
-    placeholder="Email"
-    formControlName="email"
-  />
-  <div class="password-input">
+  <div class="form-group">
+    <app-errors-displayer
+      *ngIf="getField('email')?.dirty && getField('email')?.errors as errors"
+      [validationErrors]="errors"></app-errors-displayer>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Email"
+      formControlName="email"
+    />
+  </div>
+  
+  <div class="form-group password-input">
+    <app-errors-displayer
+      *ngIf="getField('password')?.dirty && getField('password')?.errors as errors"
+      [validationErrors]="errors"></app-errors-displayer>
     <input
       [type]="showpwd ? 'text' : 'password'"
       class="form-control"
@@ -36,6 +44,7 @@
     <i class="fas fa-eye" *ngIf="!showpwd" (click)="showpwd = true"></i>
     <i class="fas fa-eye-slash" *ngIf="showpwd" (click)="showpwd = false"></i>
   </div>
+
   <button class="btn btn-primary" [disabled]="logupForm.invalid">Submit</button>
   <a routerLink="/login"> Already registered? </a>
-</form>
+</form> -->
