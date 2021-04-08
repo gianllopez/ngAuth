@@ -1,11 +1,11 @@
 <div class="form-group">
-  <app-errors-displayer
-    *ngIf="fieldErrors"
-    [validationErrors]="fieldErrors"></app-errors-displayer>
+  <small class="form-text" *ngIf="fieldControl?.dirty && fieldControl?.errors">
+    Este campo {{ errors.required || errors.minlength || errors.maxlength }}
+  </small>
   <input
-    [type]="type"
+    [type]="type || 'text'"
     class="form-control"
     [placeholder]="placeholder"
-    [formControlName]="controlName"
+    [formControlName]="fieldControlName"
   />
 </div>
