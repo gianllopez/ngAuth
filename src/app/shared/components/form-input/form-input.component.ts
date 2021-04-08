@@ -19,7 +19,7 @@ export class FormInputComponent implements DoCheck {
   errors: FormControlErrors = {};
 
   ngDoCheck(): void {
-    const { required, minlength, maxlength } = this.fieldControl?.errors || {},
+    const { required, minlength, maxlength, email } = this.fieldControl?.errors || {},
     { requiredLength } = minlength || maxlength || {};
     this.errors.required = required && 'es requerido.'
     this.errors.minlength =
