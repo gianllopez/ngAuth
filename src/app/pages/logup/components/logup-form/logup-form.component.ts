@@ -10,6 +10,8 @@ export class LogupFormComponent {
 
   showpwd = false;
 
+  submitted = false;
+
   logupForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -26,9 +28,11 @@ export class LogupFormComponent {
     });
   };
 
-  wrongFilled(field: string): any {
-    const fieldCtrl = this.logupForm.get(field)
-    return fieldCtrl?.dirty && fieldCtrl?.errors;
+  submitForm(): void {
+    if (this.logupForm.valid) {
+      this.submitted = true;
+      console.log(this.logupForm.value);
+    };
   };
 
 };
