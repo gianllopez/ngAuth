@@ -1,11 +1,13 @@
 <div class="form-group">
-  <small class="form-text" *ngIf="fieldControl?.dirty && fieldControl?.errors as controlErrors">
-    {{ controlErrors.email ? "Este email no es válido." :
-      "Este campo " + (errors.required || errors.minlength || errors.maxlength)}}
+  <small class="form-text" *ngIf="fieldControl?.dirty && fieldControl?.errors as e">
+    {{ e.email ? "Este email no es válido." :
+        "Este campo " + (e.required ? "es requerido." :
+        e.minlength ? "debe tener al menos " + e.minlength.requiredLength + " caracteres." :
+        "debe tener máximo " + e.maxlength.requiredLength + " caracteres.") }}
   </small>
   <input
-    [type]="type || 'text'"
     class="form-control"
+    [type]="type || 'text'"
     [placeholder]="placeholder"
     [formControlName]="fieldControlName"
   />
