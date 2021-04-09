@@ -14,5 +14,6 @@ export class FormInputComponent {
   @Input() type!: string;
   @Input() placeholder!: string;
   @Input() fieldControlName!: string;
+  @Input() regex!: string;
 
 };

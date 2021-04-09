@@ -6,11 +6,13 @@
   <app-form-input
     placeholder="Name"
     [fieldControl]="logupForm.get('name')"
-    fieldControlName="name"></app-form-input>
+    fieldControlName="name"
+    regex="(?!.*\s{2})^[a-zA-ZÀ-úñÑ\s]+$"></app-form-input>
   <app-form-input
     placeholder="Username"
     [fieldControl]="logupForm.get('username')"
-    fieldControlName="username"></app-form-input>
+    fieldControlName="username"
+    regex="^[a-z0-9_]*$"></app-form-input>
   <app-form-input
     type="email"
     placeholder="Email"
