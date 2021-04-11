@@ -24,8 +24,10 @@
       placeholder="Password"
       [fieldControl]="logupForm.get('password')"
       fieldControlName="password"></app-form-input>
-    <i class="fas fa-eye" *ngIf="!showpwd" (click)="showpwd = true"></i>
-    <i class="fas fa-eye-slash" *ngIf="showpwd" (click)="showpwd = false"></i>
+    <ng-container *ngIf="logupForm.get('password')?.valid || !logupForm.get('password')?.dirty">
+      <i class="fas fa-eye" *ngIf="!showpwd" (click)="showpwd = true"></i>
+      <i class="fas fa-eye-slash" *ngIf="showpwd" (click)="showpwd = false"></i>
+    </ng-container>
   </div>
   <button class="btn btn-primary" [disabled]="logupForm.invalid">
     <span class="spinner-border spinner-border-sm" *ngIf="submitted; else btnText"></span>

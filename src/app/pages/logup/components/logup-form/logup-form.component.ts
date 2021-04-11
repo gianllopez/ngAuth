@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/shared/services/api/api.service';
 
 @Component({
   selector: 'app-logup-form',
@@ -14,7 +15,7 @@ export class LogupFormComponent {
 
   logupForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService) {
     this.buildForm();
   };
 
@@ -32,6 +33,7 @@ export class LogupFormComponent {
     if (this.logupForm.valid) {
       this.submitted = true;
       console.log(this.logupForm.value);
+      this.api.createUser(this.logupForm.value)
     };
   };
 

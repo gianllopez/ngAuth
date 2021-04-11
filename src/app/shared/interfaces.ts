@@ -4,3 +4,18 @@ export interface FormControlErrors {
   maxlength?: string;
   email?: string;
 };
+
+export interface User {
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+};
+
+export interface RESTponse {
+  user: {
+    username: string;
+    email: string;
+  },
+  status: string
+};

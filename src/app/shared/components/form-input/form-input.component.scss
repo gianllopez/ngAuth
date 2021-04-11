@@ -7,7 +7,11 @@
     border-radius: 3px;
     margin: 0 0 5px 0;
   }
-  input[placeholder="Name"] {
-    text-transform: capitalize;
+  input {
+    &::-ms-reveal,
+    &::-ms-clear { display: none; }
+    &[placeholder="Name"] {
+      text-transform: capitalize;
+    }
   }
 }
