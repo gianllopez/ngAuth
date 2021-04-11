@@ -5,11 +5,17 @@
         e.minlength ? "debe tener al menos " + e.minlength.requiredLength + " caracteres." :
         "debe tener máximo " + e.maxlength.requiredLength + " caracteres.") }}
   </small>
-  <input
-    class="form-control"
-    [type]="type || 'text'"
-    [placeholder]="placeholder"
-    [formControlName]="fieldControlName"
-    [appRegstrict]="regex"
-  />
+  <div>
+    <input
+      class="form-control"
+      [type]="type || 'text'"
+      [placeholder]="placeholder"
+      [formControlName]="fieldControlName"
+      [appRegstrict]="regex"
+    />
+    <ng-container *ngIf="fieldControlName === 'password'">
+      <i class="fas fa-eye" *ngIf="type === 'password'" (click)="type = 'text'"></i>
+      <i class="fas fa-eye-slash" *ngIf="type === 'text'" (click)="type = 'password'"></i>
+    </ng-container>
+  </div>
 </div>

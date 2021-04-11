@@ -8,9 +8,7 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
   styleUrls: ['../../../form.shared.scss']})
 
 export class LogupFormComponent {
-
-  showpwd = false;
-
+  
   submitted = false;
 
   logupForm!: FormGroup;

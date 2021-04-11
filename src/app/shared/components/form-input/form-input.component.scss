@@ -7,11 +7,19 @@
     border-radius: 3px;
     margin: 0 0 5px 0;
   }
-  input {
-    &::-ms-reveal,
-    &::-ms-clear { display: none; }
-    &[placeholder="Name"] {
-      text-transform: capitalize;
+  div {
+    position: relative;
+    input {
+      &::-ms-reveal,
+      &::-ms-clear { display: none; }
+      &[placeholder="Name"] {
+        text-transform: capitalize;
+      }
+    }
+    i {
+      position: absolute;
+      top: 0; right: 0;
+      padding: 10px;
     }
   }
 }
