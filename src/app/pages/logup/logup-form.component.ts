@@ -5,10 +5,10 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
 @Component({
   selector: 'app-logup-form',
   templateUrl: './logup-form.component.html',
-  styleUrls: ['../../../form.shared.scss']})
+  styleUrls: ['../form.shared.scss']})
 
 export class LogupFormComponent {
-  
+
   submitted = false;
 
   logupForm!: FormGroup;
@@ -22,7 +22,7 @@ export class LogupFormComponent {
     this.logupForm = this.formBuilder.group({
       name: ['', [required, minLength(10), maxLength(30)]],
       username: ['', [required, minLength(8), maxLength(12)]],
-      email: ['', [email]],
+      email: ['', [required, email]],
       password: ['', [required, minLength(8)]],
     });
   };
@@ -30,8 +30,7 @@ export class LogupFormComponent {
   submitForm(): void {
     if (this.logupForm.valid) {
       this.submitted = true;
-      console.log(this.logupForm.value);
-      this.api.createUser(this.logupForm.value)
+      this.api.createUser(this.logupForm.value);
     };
   };
 

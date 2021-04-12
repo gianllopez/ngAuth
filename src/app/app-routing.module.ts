@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LogupFormComponent } from './pages/logup/logup-form.component';
 
 const routes: Routes = [
   {
     path: 'logup',
-    loadChildren: () => import('./pages/logup/logup.module').then(m => m.LogupModule),
+    component: LogupFormComponent,
     data: { animationType: 'logupForm' }
   },
   {
@@ -16,6 +17,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]})
 export class AppRoutingModule {};

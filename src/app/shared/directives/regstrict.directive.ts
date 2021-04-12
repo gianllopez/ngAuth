@@ -11,7 +11,7 @@ export class RegstrictDirective {
     const { value } = this.element.nativeElement,
     updatedValue = value.concat(event.key),
     regex = new RegExp(this.appRegstrict);
-    if (updatedValue && !regex.test(updatedValue) && event.key !== 'Backspace') {
+    if (updatedValue && !regex.test(updatedValue) && !['Backspace', 'Tab'].includes(event.key)) {
       event.preventDefault();
     };
   };

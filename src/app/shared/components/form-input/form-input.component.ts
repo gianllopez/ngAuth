@@ -16,6 +16,4 @@ export class FormInputComponent {
   @Input() fieldControlName!: string;
   @Input() regex!: string;
 
-  showpwd = false;
-
 };
