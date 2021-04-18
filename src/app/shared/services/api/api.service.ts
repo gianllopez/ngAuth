@@ -12,7 +12,7 @@ export class ApiService {
 
   errors!: ValidationErrors;
 
-  createUser(user: User): void {
+  createUser(user: User, form: FormGroup): void {
     this.http.post<RESTponse>(environment.API_URL + '/users/logup/', user)
       .subscribe({
         next: res => {
@@ -20,6 +20,11 @@ export class ApiService {
             // set the user hash in localStorage...
             this.router.navigateByUrl('home'); // create this page.
           };
+        },
+        error: res => {
+          Object.entries(res.error)
+            .forEach(err =>
+              form.get(err[0])?.setErrors({[err[0]]: err[1]}))
         }
       });
   };

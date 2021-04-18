@@ -30,7 +30,7 @@ export class LogupFormComponent {
   submitForm(): void {
     if (this.logupForm.valid) {
       this.submitted = true;
-      this.api.createUser(this.logupForm.value);
+      this.api.createUser(this.logupForm.value, this.logupForm);
     };
   };
 

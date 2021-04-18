@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, DoCheck, Input } from '@angular/core';
 import { AbstractControl, ControlContainer, FormGroupDirective } from '@angular/forms';
+import { FormControlErrors } from '../../interfaces';
 
 @Component({
   selector: 'app-form-input',
@@ -8,12 +9,28 @@ import { AbstractControl, ControlContainer, FormGroupDirective } from '@angular/
   viewProviders: [
     { provide: ControlContainer,
       useExisting: FormGroupDirective }]})
-export class FormInputComponent {
+export class FormInputComponent implements DoCheck {
 
   @Input() fieldControl!: AbstractControl | null;
   @Input() type!: string;
   @Input() placeholder!: string;
   @Input() fieldControlName!: string;
   @Input() regex!: string;
+
+  errors: FormControlErrors = {};
+
+  ngDoCheck(): void {
+    const { required, minlength, maxlength, email, username } = this.fieldControl?.errors || {},
+    { requiredLength } = minlength || maxlength || {};
+    this.errors.required = required && 'This field is required.'
+    this.errors.minlength =
+      minlength && 'This field must have at least ' + requiredLength + ' characters.';
+    this.errors.maxlength =
+      maxlength && 'This field must have max ' + requiredLength + ' characters.';
+    this.errors.email =
+      email && 'Enter a valid email address.';
+    this.errors.username = username;
+  };
+
 
 };

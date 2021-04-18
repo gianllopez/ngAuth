@@ -3,6 +3,7 @@ export interface FormControlErrors {
   minlength?: string;
   maxlength?: string;
   email?: string;
+  username?: string;
 };
 
 export interface User {
