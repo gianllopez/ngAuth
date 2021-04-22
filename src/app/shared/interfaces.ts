@@ -17,6 +17,7 @@ export interface RESTponse {
   user: {
     username: string;
     email: string;
+    hash: string;
   },
   status: string
 };

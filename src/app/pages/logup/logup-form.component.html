@@ -23,8 +23,8 @@
       placeholder="Password"
       [fieldControl]="logupForm.get('password')"
       fieldControlName="password"></app-form-input>
-  <button class="btn btn-primary" [disabled]="logupForm.invalid">
-    <span class="spinner-border spinner-border-sm" *ngIf="submitted; else btnText"></span>
+  <button class="btn btn-primary" [disabled]="logupForm.invalid && !backError">
+    <span class="spinner-border spinner-border-sm" *ngIf="loading; else btnText"></span>
     <ng-template #btnText>Submit</ng-template>    
   </button>
   <a routerLink="/login">Already registered?</a>

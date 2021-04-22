@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/shared/services/api/api.service';
 
 @Component({
@@ -9,12 +9,14 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
 
 export class LogupFormComponent {
 
-  submitted = false;
+  loading = false;
+  backError = false;
 
   logupForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) {
     this.buildForm();
+    this.errorHandler = this.errorHandler.bind(this);
   };
 
   buildForm(): void {
@@ -27,10 +29,18 @@ export class LogupFormComponent {
     });
   };
 
+  errorHandler(errors: ValidationErrors): void {
+    this.loading = false;
+    this.backError = true;
+    Object.entries(errors)
+      .forEach(err =>
+        this.logupForm.get(err[0])?.setErrors({[err[0]]: err[1]}));
+  };
+
   submitForm(): void {
     if (this.logupForm.valid) {
-      this.submitted = true;
-      this.api.createUser(this.logupForm.value, this.logupForm);
+      this.loading = true;
+      this.api.createUser(this.logupForm.value, this.errorHandler);
     };
   };
 
