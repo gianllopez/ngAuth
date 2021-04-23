@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RESTponse, User } from '../../interfaces';
-import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { FormGroup, ValidationErrors } from '@angular/forms';
 
@@ -13,7 +12,7 @@ export class ApiService {
   errors!: ValidationErrors;
 
   createUser(user: User, errorHandler: (errors: ValidationErrors) => void): void {
-    this.http.post<RESTponse>(environment.API_URL + '/users/logup/', user)
+    this.http.post<RESTponse>('http://localhost:8000/users/logup/', user)
       .subscribe({
         next: res => {
           if (res.status === 'CREATED') {

@@ -1,19 +1,19 @@
-<form class="form login-form">
+<form class="form login-form" [formGroup]="loginForm">
   <div class="form-header">
     <h4>Login</h4>
     <p>Fill the form with your credentials</p>
   </div>
   <app-form-input
-    placeholder="Username"
+    placeholder="Username/Email"
     [fieldControl]="loginForm.get('uoe')"
-    fieldControlName="username"
+    fieldControlName="uoe"
     regex="^[a-z0-9_]*$"></app-form-input>
   <app-form-input
     type="password"
     placeholder="Password"
     [fieldControl]="loginForm.get('password')"
     fieldControlName="password"></app-form-input>
-  <button class="btn btn-primary">Continue</button>
+  <button class="btn btn-primary" [disabled]="loginForm.invalid">Continue</button>
   <a routerLink="/logup">
     Not registered yet?
   </a>

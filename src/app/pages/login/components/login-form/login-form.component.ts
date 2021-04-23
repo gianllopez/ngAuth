@@ -14,7 +14,7 @@ export class LoginFormComponent {
   };
 
   buildForm(): void {
-    const { required, minLength, maxLength, email } = Validators;
+    const { required, minLength, maxLength } = Validators;
     this.loginForm = this.formBuilder.group({
       uoe: ['', [required, minLength(8), maxLength(12)]],      
       password: ['', [required, minLength(8)]]
