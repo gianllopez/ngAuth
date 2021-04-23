@@ -18,11 +18,11 @@
     placeholder="Email"
     [fieldControl]="logupForm.get('email')"
     fieldControlName="email"></app-form-input>
-    <app-form-input
-      type="password"
-      placeholder="Password"
-      [fieldControl]="logupForm.get('password')"
-      fieldControlName="password"></app-form-input>
+  <app-form-input
+    type="password"
+    placeholder="Password"
+    [fieldControl]="logupForm.get('password')"
+    fieldControlName="password"></app-form-input>
   <button class="btn btn-primary" [disabled]="logupForm.invalid && !backError">
     <span class="spinner-border spinner-border-sm" *ngIf="loading; else btnText"></span>
     <ng-template #btnText>Submit</ng-template>    
