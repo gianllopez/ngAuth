@@ -10,8 +10,9 @@ export class RegstrictDirective {
   @HostListener('keydown', ['$event']) validate(event: KeyboardEvent): void {
     const { value } = this.element.nativeElement,
     updatedValue = value.concat(event.key),
-    regex = new RegExp(this.appRegstrict);
-    if (updatedValue && !regex.test(updatedValue) && !['Backspace', 'Tab'].includes(event.key)) {
+    regex = new RegExp(this.appRegstrict),
+    allowedkeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'];
+    if (!regex.test(updatedValue) && !allowedkeys.includes(event.key)) {
       event.preventDefault();
     };
   };

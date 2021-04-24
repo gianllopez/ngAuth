@@ -32,5 +32,4 @@ export class FormInputComponent implements DoCheck {
     this.errors.username = username;
   };
 
-
 };

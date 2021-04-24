@@ -37,10 +37,10 @@ export class LogupFormComponent {
         this.logupForm.get(err[0])?.setErrors({[err[0]]: err[1]}));
   };
 
-  submitForm(): void {
+  onSubmit(): void {
     if (this.logupForm.valid) {
       this.loading = true;
-      this.api.createUser(this.logupForm.value, this.errorHandler);
+      this.api.submitUser('/logup', this.logupForm.value, this.errorHandler);
     };
   };
 

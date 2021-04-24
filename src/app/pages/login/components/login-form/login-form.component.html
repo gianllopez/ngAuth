@@ -1,12 +1,15 @@
-<form class="form login-form" [formGroup]="loginForm">
+<form class="form login-form" [formGroup]="loginForm" (submit)="onSubmit()">
   <div class="form-header">
     <h4>Login</h4>
     <p>Fill the form with your credentials</p>
   </div>
+  <small *ngIf="invalidCredentials" class="form-text">
+    {{ invalidCredentials }}
+  </small>
   <app-form-input
     placeholder="Username/Email"
-    [fieldControl]="loginForm.get('uoe')"
-    fieldControlName="uoe"
+    [fieldControl]="loginForm.get('username_or_email')"
+    fieldControlName="username_or_email"
     regex="^[a-z0-9_]*$"></app-form-input>
   <app-form-input
     type="password"

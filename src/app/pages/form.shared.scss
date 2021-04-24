@@ -1,3 +1,11 @@
+@mixin error-styles {
+  background-color: #fd7a87;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 0 0 5px 0;
+};
+
 .form {
   width: 95vw;
   max-width: 450px;
@@ -26,4 +34,5 @@
     color: #ccc;
     margin-top: 10px;
   }
+  .form-text { @include error-styles }
 }

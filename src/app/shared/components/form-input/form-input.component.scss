@@ -1,12 +1,15 @@
+@use '../../../pages/form.shared.scss' as form;
+
 .form-group {
   margin-bottom: 7px;
-  .form-text {
-    background-color: #fd7a87;
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-    margin: 0 0 5px 0;
-  }
+  .form-text { @include form.error-styles }  
+  // .form-text {
+  //   background-color: #fd7a87;
+  //   color: white;
+  //   padding: 5px;
+  //   border-radius: 3px;
+  //   margin: 0 0 5px 0;
+  // }
   div {
     position: relative;
     input {
