@@ -13,6 +13,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
     data: { animationType: 'loginForm' }
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+    data: { animationType: 'Home' }
+  },
   { path: '', redirectTo: 'logup', pathMatch: 'full' }
 ];
 
