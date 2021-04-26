@@ -1,0 +1,32 @@
+.home-page {
+  padding: 1em;
+  width: calc(100vw - 2em);
+  max-width: 750px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  figure {
+    margin: 1.25em 0;
+    max-width: 200px;
+    img { width: 100%; }
+ }
+ div {
+   max-width: 400px;
+   font-size: min(5vw, 1.45em);
+  }
+  @media (min-width: 614px) {
+    figure {
+      width: calc(40% - 2em);
+      margin: 1em;
+    }
+    div {
+      width: 60%;
+      border-left: 5px solid;
+      padding: 10px;
+      text-align: left;
+    }
+  }
+}
