@@ -9,9 +9,10 @@ export class ApiService {
 
   constructor(private http: HttpClient, private router: Router) {};
 
+  URL = 'http://localhost:8000/users'
+
   submitUser(endpoint: string, data: User, onError: (errors: ValidationErrors) => void): void {
-    const URL = `http://localhost:8000/users${endpoint}/`;
-    this.http.post<RESTponse>(URL, data)
+    this.http.post<RESTponse>(this.URL + endpoint + '/', data)
       .subscribe({
         next: res => {
           if (['CREATED', 'AUTHENTICATED'].includes(res.status)) {
@@ -21,6 +22,18 @@ export class ApiService {
         },
         error: res => onError(res.error)
       });
+  };
+
+  verifyHash(): void {
+    const hash = localStorage.getItem('user-hash');    
+    this.http.post(this.URL + '/verify-hash/', { hash })
+    .subscribe({
+      error: res => {
+        if (!res.error.valid) {
+          localStorage.clear();
+        };
+      }
+    })
   };
 
 };
