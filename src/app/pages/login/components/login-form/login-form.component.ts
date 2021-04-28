@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { ApiService } from 'src/app/shared/services/api/api.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class LoginFormComponent {
 
   invalidCredentials!: string;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private title: Title) {
+    this.title.setTitle('ngAuth - Login');
     this.buildForm();
     this.errorHandler = this.errorHandler.bind(this);
   };

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ApiService } from 'src/app/shared/services/api/api.service';
 
 @Component({
@@ -7,8 +8,11 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
   styleUrls: ['./home-page.component.scss']})
 export class HomePageComponent implements OnInit {
 
-  constructor(private api: ApiService) {};
+  constructor(private api: ApiService, private title: Title) {};
 
-  ngOnInit(): void { this.api.verifyHash() };
+  ngOnInit(): void {
+    this.title.setTitle('ngAuth - Home');
+    this.api.verifyHash();
+  };
 
 };
