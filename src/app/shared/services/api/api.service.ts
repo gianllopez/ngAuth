@@ -24,16 +24,12 @@ export class ApiService {
       });
   };
 
-  verifyHash(): void {
-    const hash = localStorage.getItem('user-hash');    
+  verifyHash(onSuccess: (res: any) => void ): void {
+    const hash = localStorage.getItem('user-hash');
     this.http.post(this.URL + '/verify-hash/', { hash })
-    .subscribe({
-      error: res => {
-        if (!res.error.valid) {
-          localStorage.clear();
-        };
-      }
-    })
+      .subscribe({
+        next: res => onSuccess(res),
+        error: res => !res.error.valid && localStorage.clear()})
   };
 
 };

@@ -10,9 +10,12 @@ export class HomePageComponent implements OnInit {
 
   constructor(private api: ApiService, private title: Title) {};
 
+  name!: string;
+
   ngOnInit(): void {
     this.title.setTitle('ngAuth - Home');
-    this.api.verifyHash();
+    this.api.verifyHash((res: any) => {
+      if (res.valid) this.name = res.name; });     
   };
 
 };
