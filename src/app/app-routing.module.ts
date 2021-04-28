@@ -22,7 +22,8 @@ const routes: Routes = [
     data: { animationType: 'Home' },
     canActivate: [RoutesGuard]
   },
-  { path: '', redirectTo: 'logup', pathMatch: 'full' }
+  { path: '', redirectTo: 'logup', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

@@ -8,8 +8,14 @@ export class RoutesGuard implements CanActivate {
   
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const { path } = route.url[0],
-    loggedIn = localStorage.getItem('user-hash') ? true : false;
-    return ['logup', 'login'].includes(path) ? !loggedIn : loggedIn;
+    loggedIn = localStorage.getItem('user-hash') ? true : false,
+    isForm = ['logup', 'login'].includes(path);
+    if (isForm && loggedIn) {
+      this.router.navigateByUrl('home');
+    } else if (!isForm && !loggedIn) {
+      this.router.navigateByUrl('logup');
+    };
+    return isForm ? !loggedIn : loggedIn;
   };
   
 };

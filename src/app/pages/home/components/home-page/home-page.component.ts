@@ -11,4 +11,4 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void { this.api.verifyHash() };
 
-}
+};

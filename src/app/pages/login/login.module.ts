@@ -12,6 +12,5 @@ import { FormGroupDirective } from '@angular/forms';
     LoginRoutingModule,
     SharedModule
   ],
-  providers: [ FormGroupDirective ]
-})
-export class LoginModule { }
+  providers: [ FormGroupDirective ]})
+export class LoginModule {};
