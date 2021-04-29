@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient, private router: Router) {};
 
-  URL = 'http://localhost:8000/users'
+  URL = 'https://ngauthrest.herokuapp.com/users'
 
   submitUser(endpoint: string, data: User, onError: (errors: ValidationErrors) => void): void {
     this.http.post<RESTponse>(this.URL + endpoint + '/', data)

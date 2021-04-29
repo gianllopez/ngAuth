@@ -3,13 +3,6 @@
 .form-group {
   margin-bottom: 7px;
   .form-text { @include form.error-styles }  
-  // .form-text {
-  //   background-color: #fd7a87;
-  //   color: white;
-  //   padding: 5px;
-  //   border-radius: 3px;
-  //   margin: 0 0 5px 0;
-  // }
   div {
     position: relative;
     input {
@@ -17,6 +10,11 @@
       &::-ms-clear { display: none; }
       &[placeholder="Name"] {
         text-transform: capitalize;
+      }
+      &[placeholder="Username"] {
+        &:not(:placeholder-shown) {
+          text-transform: lowercase;
+        }
       }
     }
     i {

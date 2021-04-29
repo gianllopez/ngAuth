@@ -19,6 +19,15 @@ export class FormInputComponent implements DoCheck {
 
   errors: FormControlErrors = {};
 
+  patternRestriction(event: Event): void {
+    const regex = new RegExp(this.regex),
+    target = event.target as HTMLInputElement,
+    { value } = target;
+    if (!regex.test(value)) {
+      target.value = value.slice(0, value.length - 1);
+    };
+  };
+
   ngDoCheck(): void {
     const { required, minlength, maxlength, email, username } = this.fieldControl?.errors || {},
     { requiredLength } = minlength || maxlength || {};
