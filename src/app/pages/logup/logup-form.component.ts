@@ -24,7 +24,7 @@ export class LogupFormComponent {
   buildForm(): void {
     const { required, minLength, maxLength, email } = Validators;
     this.logupForm = this.formBuilder.group({
-      name: ['', [required, minLength(10), maxLength(30)]],
+      name: ['', [required, maxLength(75)]],
       username: ['', [required, minLength(8), maxLength(12)]],
       email: ['', [required, email]],
       password: ['', [required, minLength(8)]],

@@ -20,9 +20,9 @@ export class LoginFormComponent {
   };
 
   buildForm(): void {
-    const { required, minLength, maxLength } = Validators;
+    const { required, minLength } = Validators;
     this.loginForm = this.formBuilder.group({
-      username_or_email: ['', [required, minLength(8), maxLength(12)]],      
+      username_or_email: ['', [minLength(8), required]],
       password: ['', [required, minLength(8)]]
     });
   };
