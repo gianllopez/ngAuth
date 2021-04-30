@@ -10,13 +10,16 @@
     placeholder="Username/Email"
     [fieldControl]="loginForm.get('username_or_email')"
     fieldControlName="username_or_email"
-    regex="^[a-zA-Z0-9_]*$"></app-form-input>
+    regex="^[a-zA-Z0-9_@.]*$"></app-form-input>
   <app-form-input
     type="password"
     placeholder="Password"
     [fieldControl]="loginForm.get('password')"
     fieldControlName="password"></app-form-input>
-  <button class="btn btn-primary" [disabled]="loginForm.invalid">Continue</button>
+  <button class="btn btn-primary" [disabled]="loginForm.invalid && !invalidCredentials">
+    <span class="spinner-border spinner-border-sm" *ngIf="loading; else btnText"></span>
+    <ng-template #btnText>Continue</ng-template>    
+  </button>
   <a routerLink="/logup">
     Not registered yet?
   </a>
