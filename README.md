@@ -4,4 +4,5 @@ A lot of websites requires forms to login and logup users, ngAuth is an example 
 ## Technologies
 ngAuth was developed using:
 - Angular.
-- SASS. CSS Preprocessor.
+- SASS. The conventional CSS Preprocessor.
+- Bootstrap. The most used CSS framework.
