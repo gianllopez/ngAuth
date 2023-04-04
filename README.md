@@ -1,8 +1,2 @@
 # ngAuth
-## _Simple user log system_
-A lot of websites requires forms to login and logup users, ngAuth is an example of this.
-## Technologies
-ngAuth was developed using:
-- Angular.
-- SASS. The conventional CSS Preprocessor.
-- Bootstrap. The most used CSS framework.
+Este proyecto fue desarrollado hace mucho tiempo y, desde entonces, he mejorado significativamente mis habilidades técnicas. Si deseas verificar mi progreso, te invito a revisar algunos de mis repositorios más recientes.
